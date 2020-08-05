@@ -24,14 +24,18 @@ let dataArr = [];
         req.body.id = db.length +1 ;
         db.push(req.body);
         let note = JSON.stringify(db);
-        fs.writeFileSync(pathForJSON, note, "utf8", function(err) {
-        
-            if (err) {
-            console.log ('error')
-            }
-        });
+        savedb(note);
         res.json(note);
         });
+
+    function savedb(note) {
+        fs.writeFileSync(pathForJSON, note, "utf8", function(err) {
+        
+        if (err) console.log ('error')
+    
+        return `Done`;
+    });
+   }
 
 
  }
