@@ -4,41 +4,45 @@ const path = require("path");
 // var db = require("../db/db.json");
 
 // ROUTING
-console.log(__dirname);
+
 var pathForJSON = path.join(__dirname, '../db/db.json');
 console.log(pathForJSON);
+let dataArr = [];
 
  module.exports = function(app) {
 
- fs.readFile(pathForJSON, "utf8", function(err, data) {
-   if (err) {
-     throw err;
-   }
-    console.log(JSON.parse(data));
-    console.log(data);
-  
     app.get("/api/notes", function(req, res) {
-      return res.json(JSON.parse(data));
-    }); 
+        dataArr = fs.readFile(pathForJSON, "utf8", function(err, data) {
+        if (err) {
+            throw err;
+        }
+
+        dataArr = JSON.parse(dataArr);
+        console.log(JSON.parse(dataArr));
+        res.json(dataArr);
+        }); 
  });
 
 
    app.post("/api/notes", function(req, res) {
-     JSON.stringify(data, null, '\t')
-    console.log(req.body);
-    var storedData = [];
-    storedData.push(JSON.stringify(req.body));
-    console.log(storedData);
-    fs.appendFile(pathForJSON,  storedData, function(err) {
-         if (err) {
-           return console.log(err);
-         }
-    
-         res.json(true);
-         console.log("Success!");
-    
-       }); 
-   });
+
+        dataArr = fs.readFileSync(pathForJSON, "utf8");
+        console.log("....Write....");
+        console.log(dataArr)
+
+        dataArr = JSON.parse(dataArr);
+        //   req.body.id = noteArr.length;
+        dataArr.push(req.body);
+        dataArr = JSON.stringify(dataArr);
+        
+        fs.writeFileSync(pathForJSON, dataArr, "utf8", function(err) {
+        
+            if (err) {
+            console.log ('error')
+            }
+        });
+        res.json(JSON.parse(dataArr));
+        });
   
  }
 
