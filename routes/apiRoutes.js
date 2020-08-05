@@ -18,5 +18,21 @@ let dataArr = [];
     res.json(db);
     });
 
+    app.post("/api/notes", function(req, res) {
+        console.log(req.body);
+  
+        req.body.id = db.length +1 ;
+        db.push(req.body);
+        let note = JSON.stringify(db);
+        fs.writeFileSync(pathForJSON, note, "utf8", function(err) {
+        
+            if (err) {
+            console.log ('error')
+            }
+        });
+        res.json(note);
+        });
+
+
  }
 
