@@ -28,6 +28,20 @@ let dataArr = [];
         res.json(note);
         });
 
+
+        app.delete("/api/notes/:id", function (req,res) {
+            const id = req.params.id;
+            console.log(id);
+            //Get the id from req.params to remove a note from db.json
+            db.splice(id, 1);
+            let note1 = JSON.stringify(db);
+            console.log("Notes after Delete");
+            console.log(note1);
+            savedb(note1);
+            res.json({id: id})
+        });
+
+
     function savedb(note) {
         fs.writeFileSync(pathForJSON, note, "utf8", function(err) {
         
