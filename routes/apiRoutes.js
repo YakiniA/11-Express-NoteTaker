@@ -21,8 +21,9 @@ let dataArr = [];
     app.post("/api/notes", function(req, res) {
         db = JSON.parse(fs.readFileSync(pathForJSON, "utf8"));
         console.log(req.body);
-  
-        req.body.id = db.length +1;
+        const myRnId = () => parseInt(50 * Math.random());
+        console.log(myRnId()); 
+        req.body.id = myRnId();
         db.push(req.body);
         let note = JSON.stringify(db);
         savedb(note);
