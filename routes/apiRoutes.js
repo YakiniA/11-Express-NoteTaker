@@ -19,9 +19,10 @@ let dataArr = [];
     });
 
     app.post("/api/notes", function(req, res) {
+     
         console.log(req.body);
   
-        req.body.id = db.length +1 ;
+        req.body.id = db.length +1;
         db.push(req.body);
         let note = JSON.stringify(db);
         savedb(note);
@@ -30,15 +31,21 @@ let dataArr = [];
 
 
         app.delete("/api/notes/:id", function (req,res) {
+            db = JSON.parse(fs.readFileSync(pathForJSON, "utf8"));
             const id = req.params.id;
-            console.log(id);
+            console.log("Params id" +id);
             //Get the id from req.params to remove a note from db.json
-            db.splice(id, 1);
+            // db.splice(id, 1);
+            db = db.filter(selectNote => {
+                return selectNote.id != id;
+            });
+
+           
             let note1 = JSON.stringify(db);
             console.log("Notes after Delete");
             console.log(note1);
             savedb(note1);
-            res.json({id: id})
+            res.json(db);
         });
 
 
