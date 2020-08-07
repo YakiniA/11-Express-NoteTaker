@@ -71,7 +71,7 @@ Link To the GitHub Repo : https://github.com/YakiniA/11-Express-NoteTaker
 
 Link To the deployed application on Heroku : [Heroku Url](output/team.html)
 
-Link To The Demo Video : [Demo Video](public/asstes/Notetaker.gif)
+Link To The Demo Video : [Demo Video](public/asstes/Video.gif)
 
 ##### References
 
