@@ -1,10 +1,10 @@
-# Unit 11 Express Homework: Note Taker
+## Unit 11 Express Homework: Note Taker
 
-## Description
+### Description
 
 The purpose of this application is to develop a note taker that can be used to write, save, and delete notes. This application uses node with express backend to save and retrieve note data from the JSON file. This application frontend has been created using bootstrap and css. 
 
-## User Story
+### User Story
 
 AS A user, I want to be able to write and save notes
 
@@ -32,17 +32,6 @@ The application will be invoked with the following command:
 npm start
 ```
 
-### Node.js Built-in Package
-
-* fs -  Used fs.writeFileSync method to write to the file
-
-* path - Used path.resolve, path.join method to deal with file paths
-
-
-### NPM Module
-
-* express - Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. Used express server for this project and also sets up the Express app to handle data parsing.
-
 ### Description
 
 * The following HTML routes are created:
@@ -60,3 +49,33 @@ npm start
   * DELETE `/api/notes/:id` - Receives a query parameter containing the id of a note. This unique `id` is used to delete a note from `db.json` file, after delete it displays all the notes from that file.
 
 
+### Node.js Built-in Package
+
+* fs -  Used fs.writeFileSync method to write to the file
+
+* path - Used path.resolve, path.join method to deal with file paths
+
+
+### NPM Module
+
+* express - Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. Used express server for this project and also sets up the Express app to handle data parsing.
+
+### Preview
+
+![RecordedVideo](public/assets/Video.gif)
+![Screenshot](public/assets/Screenshot.jpg)
+
+### Submission Links
+
+Link To the GitHub Repo : https://github.com/YakiniA/11-Express-NoteTaker
+
+Link To the deployed application on Heroku : [Heroku Url](output/team.html)
+
+Link To The Demo Video : [Demo Video](public/asstes/Notetaker.gif)
+
+##### References
+
+StackOverflow : [StackOverflow - Generating Random Numbers](https://stackoverflow.com/questions/18806210/generating-non-repeating-random-numbers-in-js)<br/>
+StackOverflow : [StackOverflow - Remove item from array](https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array)<br/>
+W3Schools : [W3Schools - Splice](https://www.w3schools.com/jsref/jsref_splice.asp)
+Express : [Express SErver](https://expressjs.com/)
