@@ -2,25 +2,7 @@
 
 ## Description
 
-Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.
-
-* The application frontend has already been created, it's your job to build the backend and connect the two.
-
-* The following HTML routes should be created:
-
-  * GET `/notes` - Should return the `notes.html` file.
-
-  * GET `*` - Should return the `index.html` file
-
-* The application should have a `db.json` file on the backend that will be used to store and retrieve notes using the `fs` module.
-
-* The following API routes should be created:
-
-  * GET `/api/notes` - Should read the `db.json` file and return all saved notes as JSON.
-
-  * POST `/api/notes` - Should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
-
-  * DELETE `/api/notes/:id` - Should receive a query parameter containing the id of a note to delete. This means you'll need to find a way to give each note a unique `id` when it's saved. In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
+The purpose of this application is to develop a note taker that can be used to write, save, and delete notes. This application uses node with express backend to save and retrieve note data from the JSON file. This application frontend has been created using bootstrap and css. 
 
 ## User Story
 
@@ -30,51 +12,51 @@ I WANT to be able to delete notes I've written before
 
 SO THAT I can organize my thoughts and keep track of tasks I need to complete
 
-## Business Context
+### Prerequisite
 
-For users that need to keep track of a lot of information, it's easy to forget or be unable to recall something important. Being able to take persistent notes allows users to have written information available when needed.
+To execute the generate readme application, the user must first install node.js.
 
-## Acceptance Criteria
+Steps to Install NodeJS: [Node.js Installation](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm#windows-node-version-managers)
 
-Application should allow users to create and save notes.
+After installing node.js
 
-Application should allow users to view previously saved notes.
+To install NPM module dependencies, run the command:
 
-Application should allow users to delete previously saved notes.
+```
+npm install
+```
 
-## Deploying the App
+The application will be invoked with the following command:
 
-You will not be able to deploy your server side code on GitHub pages. This app should be deployed on Heroku. Carefully follow the [Heroku Guide](../04-Supplemental/HerokuGuide.md) for getting your app deployed on Heroku.
+```
+npm start
+```
 
-- - -
+### Node.js Built-in Package
 
-## Commit Early and Often
+* fs -  Used fs.writeFileSync method to write to the file
 
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
+* path - Used path.resolve, path.join method to deal with file paths
 
-* Your commit history is a signal to employers that you are actively working on projects and learning new skills.
 
-* Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
+### NPM Module
 
-Follow these guidelines for committing:
+* express - Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. Used express server for this project and also sets up the Express app to handle data parsing.
 
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
+### Description
 
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
+* The following HTML routes are created:
 
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
+  * GET `/notes` - Returns the `notes.html` file.
 
-* Test your application before you commit to ensure functionality at every step in the development process.
+  * GET `*`      - Returns the `index.html` file
 
-We would like you to have well over 200 commits by graduation, so commit early and often!
+* The following API routes are created:
 
-## Submission on BCS
+  * GET `/api/notes`  - Reads the `db.json` file and return all saved notes as JSON.
 
-You are required to submit the following:
+  * POST `/api/notes` - Receives new note on the request body, add it to the `db.json` file and then displays the note.
 
-* The URL of the deployed application. This should be the link to the url provided by Heroku. Be sure not to submit a link to the Heroku dashboard.
+  * DELETE `/api/notes/:id` - Receives a query parameter containing the id of a note. This unique `id` is used to delete a note from `db.json` file, after delete it displays all the notes from that file.
 
-* The URL of the GitHub repository
 
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
