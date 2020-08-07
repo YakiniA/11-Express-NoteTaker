@@ -71,11 +71,11 @@ Link To the GitHub Repo : https://github.com/YakiniA/11-Express-NoteTaker
 
 Link To the deployed application on Heroku : [Heroku Url](output/team.html)
 
-Link To The Demo Video : [Demo Video](public/asstes/Video.gif)
+Link To The Demo Video : [Demo Video](public/assets/Video.gif)
 
 ##### References
 
 StackOverflow : [StackOverflow - Generating Random Numbers](https://stackoverflow.com/questions/18806210/generating-non-repeating-random-numbers-in-js)<br/>
 StackOverflow : [StackOverflow - Remove item from array](https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array)<br/>
-W3Schools : [W3Schools - Splice](https://www.w3schools.com/jsref/jsref_splice.asp)
-Express : [Express SErver](https://expressjs.com/)
+W3Schools : [W3Schools - Splice](https://www.w3schools.com/jsref/jsref_splice.asp)<br/>
+Express : [Express Server](https://expressjs.com/)
