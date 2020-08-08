@@ -69,7 +69,7 @@ npm start
 
 Link To the GitHub Repo : https://github.com/YakiniA/11-Express-NoteTaker
 
-Link To the deployed application on Heroku : [Heroku Url](output/team.html)
+Link To the deployed application on Heroku : https://nodejs-express-notetaker-11.herokuapp.com/
 
 Link To The Demo Video : [Demo Video](public/assets/Video.gif)
 
