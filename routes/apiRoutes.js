@@ -9,18 +9,23 @@ var pathForJSON = path.join(__dirname, '../db/db.json');
  module.exports = function(app) {
 
     app.get("/api/notes", function(req, res) {
+       
         res.json(db);
+        
     });
 
     app.post("/api/notes", function(req, res) {
+       
         db = JSON.parse(fs.readFileSync(pathForJSON, "utf8"));
         // Random number for id. Also referred to perform delete operation
-        const myRnId = () => parseInt(100 * Math.random());
+        const myRnId = () => parseInt(Date.now() * Math.random());
         req.body.id = myRnId();
         db.push(req.body);
+        // JSON.parse(db);
         let note = JSON.stringify(db);
         savedb(note);
         res.json(note);
+
         });
 
 
